@@ -1,4 +1,4 @@
-# vanilla Practical Projects - provided by freeCodeCamp
+# Vanilla Practical Projects - provided by freeCodeCamp
 
 ## Resources
 
