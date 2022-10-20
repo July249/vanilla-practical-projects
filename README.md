@@ -28,6 +28,17 @@
 
 ### 01. Color Flipper
 
+- DOM API인 getElementById(), querySelector()를 활용하여 직접적인 DOM 조작 진행
+- color에 textContent를 이용하여 내용 조작
+- Element.style.backgroundColor를 이용하여 문서의 배경색을 조작
+- randomNumber 생성하는 방법 (별도의 함수를 이용하지 않고 바로 Math.API를 이용하여 생성하였음)
+
+\[ Summary \]
+
+app.js에서는 주어진 배열 안에 있는 색상만 표기가 가능하였으나, hex.js에서 hex 색코드를 직접 생성하여 랜덤한 색상 정보 뽑기가 가능하였음
+
+---
+
 ### 02. Counter
 
 ### 03. Reviews
