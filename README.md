@@ -74,6 +74,22 @@ A. No
 
 ### 03. Reviews
 
+- HTML을 작성시, 개별적인 요소로 데이터를 받아서 넣어야할 (즉, 객체에서 각각의 프로퍼티 키값에 해당하는 경우) 데이터의 경우에는 넣어야할 키값을 가지는 요소에 id로 입력하는 것이 권장됨
+- 이번에는 02번 Counter 예제와 다르게 prevBtn, nextBtn, randomBtn을 querySelectorAll()을 사용하지 않고 개별로 뽑아서 동작시켰다는 점이 이전 예제와의 차이점이다.
+- window 전역객체에 이벤트리스너를 연결해서 'DOMContentLoaded' 이벤트가 동작하게 설정하였다. 따라서 showPerson() 함수를 DOM page가 로딩되자마자 렌더링이 되도록 하였다.
+- 이벤트 버블링에 의해 버튼을 클릭하여도 전역객체인 window는 언제나 이벤트를 발생할 수 있게 된다. 따라서 버튼을 클릭하면 showPerson() 함수는 언제든 동작하게 된다. 동작하자마자 currentItem 번호의 넘버링에 변화를 주고(단항연산자 사용), currentItem을 showPerson()함수에 전달하여 (전역으로 선언한 변수이기 때문에 함수 파라미터로 등록하지 않아도 된다.) 다음 번호의 정보를 전달하여 준다.
+- 버튼으로 전달된 currentItem 번호가 주어진 정보의 배열 요소 갯수를 초과하거나 음수를 가지는 경우 이를 다시 조작하기 위해 조정해주는 if 문을 추가하여 준다.
+
+\[ Summary \]
+
+- 이벤트 버블링을 이용하여 변화되는 정보를 바로 window 전역객체에 전달하는 DOMContentLoaded를 이용한 점은 자주 이용할 필요가 있다고 생각한다.
+- 홈페이지 안의 버튼 동작을 통해서 또는 카드뉴스에서 받아지는 이벤트(clientX 또는 clientY)를 통해서 발생하는 정보 변화는 경우에 따라 충분히 재사용성이 좋은 부분이라고 본다.
+
+\[ Check Point \]
+
+Q. Has it some of useful component?
+A. (Partially) Yes
+
 ---
 
 ### 04. NavBar
