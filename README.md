@@ -2,15 +2,17 @@
 
 ## Resources
 
+---
+
 - Youtube: https://youtu.be/3PHXvlpOkf4
 
 - GitHub: https://github.com/john-smilga/javascript-basic-projects
 
 - Published Page: https://www.vanillajavascriptprojects.com/
 
----
-
 ## What Do You Expect From This Project?
+
+---
 
 - 실용적인 Vanilla JS 프로젝트를 수행
 
@@ -22,9 +24,9 @@
 
 - 동일한 프로젝트들로 리액트 구현도 존재함 >> 이번 프로젝트 완료 후, 리액트로 동일 프로젝트 진행할 예정임
 
----
-
 ## What Did You Get From This Project?
+
+---
 
 ### 01. Color Flipper
 
@@ -35,7 +37,12 @@
 
 \[ Summary \]
 
-app.js에서는 주어진 배열 안에 있는 색상만 표기가 가능하였으나, hex.js에서 hex 색코드를 직접 생성하여 랜덤한 색상 정보 뽑기가 가능하였음
+- app.js에서는 주어진 배열 안에 있는 색상만 표기가 가능하였으나, hex.js에서 hex 색코드를 직접 생성하여 랜덤한 색상 정보 뽑기가 가능하였음
+
+\[ Check Point \]
+
+Q. Has it some of useful component?
+A. No
 
 ---
 
