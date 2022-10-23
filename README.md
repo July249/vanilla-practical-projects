@@ -90,9 +90,24 @@ A. No
 Q. Has it some of useful component?
 A. (Partially) Yes
 
----
-
 ### 04. NavBar
+
+- toggle 버튼 클릭시 class를 추가하고, 제거하여 스타일링에 변화를 줄 수 있다.
+
+\[ Summary \]
+
+- classList - shows/gets all classes
+- contains - checks classList for specific class
+- add - add class
+- remove - remove class
+- toggle - toggles class
+
+\[ Check Point \]
+
+Q. Has it some of useful component?
+A. Yes, it is useful for NavBar.
+
+---
 
 ### 05. SideBar
 
