@@ -107,9 +107,39 @@ A. (Partially) Yes
 Q. Has it some of useful component?
 A. Yes, it is useful for NavBar.
 
----
-
 ### 05. SideBar
+
+- toggle 버튼 클릭시 class를 추가하고, 제거하여 스타일링에 변화를 줄 수 있다.
+- 기존의 classList.add(), classList.remove()를 사용하는 방법보다는 classList.toggle() 방법이 보다 편리하고 단축속성에 해당한다.
+
+  ```js
+  toggleBtn.addEventListener('click', () => {
+    if (sidebar.classList.contains('show-sidebar')) {
+      sidebar.classList.remove('show-sidebar');
+    } else {
+      sidebar.classList.add('show-sidebar');
+    }
+    sidebar.classList.toggle('show-sidebar');
+  });
+  ```
+
+  ```js
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('show-sidebar');
+  });
+  ```
+
+\[ Summary \]
+
+- classList - shows/gets all classes
+- toggle - toggles class
+
+\[ Check Point \]
+
+Q. Has it some of useful component?
+A. Yes, it is useful for Sidebar on Mobile Screen.
+
+---
 
 ### 06. Modal
 
