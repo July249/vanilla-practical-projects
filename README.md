@@ -145,6 +145,7 @@ A. Yes, it is useful for Sidebar on Mobile Screen.
 - css를 살펴보면 display 속성이 아닌 visibility 속성을 이용하고 있음을 확인할 수 있다
 - display:none은 해당 속성을 지닌 요소와 그 하위 요소를 모두 렌더링하지 않게 한다. 따라서 레이아웃에도 포함되지 않는다
 - visibility:hiddon은 해당 속성을 지닌 요소만 보이지 않도록 하는 것이지 레이아웃은 그대로 유지된다.
+- modal을 끄고 키는 버튼이 정해져 있기 때문에 classList.add(), classList.remove()를 사용했지만, 만일 하나의 버튼으로 또는 여러 개의 버튼이더라도 modal 창을 끄고 키는 것을 모두 할 수 있게 하는 것이 목적이라면 classList.toggle()을 사용하는 것도 가능하다.
 
 \[ Summary \]
 
