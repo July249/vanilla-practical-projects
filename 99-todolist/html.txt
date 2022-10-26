@@ -1,0 +1,20 @@
+<article class="artcl_main">
+      <header>
+        <h2 class="ir_hidden">투두리스트 다운로더</h2>
+        <label for="inp_todo" class="ir_hidden">투두리스트 입력창</label>
+        <input id="inp_todo" placeholder="ex) 일기 쓰기" maxlength="30" />
+        <button type="button">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </button>
+      </header>
+      <ul class="list_todo">
+        <!-- <li>
+          테스트입니다 테스트입니다!
+          <button>
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </li> -->
+      </ul>
+      <!-- 리스트가 있어야 button이 나타나게 할 것임 -->
+      <!-- <button class="btn" style="display: block">리스트 다운로드</button> -->
+    </article>
