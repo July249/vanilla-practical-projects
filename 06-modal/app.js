@@ -9,8 +9,14 @@ const closeBtn = document.querySelector('.close-btn');
 
 modalBtn.addEventListener('click', () => {
   modal.classList.add('open-modal');
+  // modal.classList.toggle('open-modal');
 });
 
 closeBtn.addEventListener('click', () => {
   modal.classList.remove('open-modal');
+  // modal.classList.toggle('open-modal');
+});
+
+window.addEventListener('click', (e) => {
+  e.target === modal ? modal.classList.remove('open-modal') : false;
 });
