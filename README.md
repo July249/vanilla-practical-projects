@@ -146,6 +146,13 @@ A. Yes, it is useful for Sidebar on Mobile Screen.
 - display:none은 해당 속성을 지닌 요소와 그 하위 요소를 모두 렌더링하지 않게 한다. 따라서 레이아웃에도 포함되지 않는다
 - visibility:hiddon은 해당 속성을 지닌 요소만 보이지 않도록 하는 것이지 레이아웃은 그대로 유지된다.
 - modal을 끄고 키는 버튼이 정해져 있기 때문에 classList.add(), classList.remove()를 사용했지만, 만일 하나의 버튼으로 또는 여러 개의 버튼이더라도 modal 창을 끄고 키는 것을 모두 할 수 있게 하는 것이 목적이라면 classList.toggle()을 사용하는 것도 가능하다.
+- 사용자 편의를 위해 모달창의 영역이 아닌 blur처리된 공간을 클릭하여도 모달창이 사라지도록 만들어야 한다. 이를 위해 아래의 코드를 추가하여 준다.
+
+  ```js
+  window.addEventListener('click', (e) => {
+    e.target === modal ? modal.classList.remove('open-modal') : false;
+  });
+  ```
 
 \[ Summary \]
 
