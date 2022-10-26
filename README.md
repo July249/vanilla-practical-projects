@@ -139,9 +139,23 @@ A. Yes, it is useful for NavBar.
 Q. Has it some of useful component?
 A. Yes, it is useful for Sidebar on Mobile Screen.
 
----
-
 ### 06. Modal
+
+- Modal은 웹사이트에서 광고 또는 알림, 로그인에 자주 사용되는 만큼 익숙하게 구현할 필요가 있다
+- css를 살펴보면 display 속성이 아닌 visibility 속성을 이용하고 있음을 확인할 수 있다
+- display:none은 해당 속성을 지닌 요소와 그 하위 요소를 모두 렌더링하지 않게 한다. 따라서 레이아웃에도 포함되지 않는다
+- visibility:hiddon은 해당 속성을 지닌 요소만 보이지 않도록 하는 것이지 레이아웃은 그대로 유지된다.
+
+\[ Summary \]
+
+- 모달창은 레이아웃을 유지한 상태에서 visibility 속성과 z-index 만으로 on/off를 나타낸다.
+
+\[ Check Point \]
+
+Q. Has it some of useful component?
+A. Yes, it is useful for Modal page.
+
+---
 
 ### 07. Questions
 
