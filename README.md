@@ -163,9 +163,42 @@ A. Yes, it is useful for Sidebar on Mobile Screen.
 Q. Has it some of useful component?
 A. Yes, it is useful for Modal page.
 
----
-
 ### 07. Questions
+
+- 반복되는 부분에 대해서는 querySelectorAll()을 이용하여 NodeList를 뽑아낸 다음 forEach를 구현할 수 있다. => 쿼리선택자 메서드를 이용하여 내부 요소에 조작을 가하는 방법!
+- 이벤트가 일어나는 요소의 클래스 속성을 변경함에 있어서 해당 요소의 클래스명을 직접 DOM 조작을 가하기 보다는 부모 요소의 클래스(.question)에 클래스를 추가 또는 삭제하여 css 변화를 이끌어내는 방법도 있다.
+- 강의에서의 구현 방법과 본인의 구현 방법에는 기능 구현에 있어 다음과 같은 차이가 있다.
+
+  - My Answer: show-text 클래스를 question 클래스를 가진 요소에 직접 add, remove하여 singleQuestion에 대해 버튼 클릭이 필수적이게 구현하였다. 이를 통해 여러 개의 숨김 글을 모두 열람할 수 있다.
+  - Lecture Answer: show-text 클래스를 question 클래스를 가진 요소에 toggle로 넣고, 빼는 방법을 구현하는데 특히 btn 이벤트리스너 안에서 question NodeList를 순회하여 show-text가 있는 question에는 classList.remove()메서드를 적용하여 한 번에 하나의 숨김글만 열람할 수 있게 동작시켰다.
+
+  ```js
+  const questions = document.querySelectorAll('.question');
+
+  questions.forEach((question) => {
+    const plusBtn = question.querySelector('.plus-icon');
+    const minusBtn = question.querySelector('.minus-icon');
+
+    plusBtn.addEventListener('click', () => {
+      question.classList.add('show-text');
+    });
+
+    minusBtn.addEventListener('click', () => {
+      question.classList.remove('show-text');
+    });
+  });
+  ```
+
+\[ Summary \]
+
+- querySelectorAll()을 통해 NodeList를 뽑아내어 내부 요소를 순회 및 선택하는 방법이 document 내의 모든 요소를 찾는 것보다 훨씬 성능적인 이슈에서 좋은 방법이라는 점을 확인할 수 있다
+
+\[ Check Point \]
+
+Q. Has it some of useful component?
+A. Yes, it is useful for repeatly list item case.
+
+---
 
 ### 08. Menu
 
