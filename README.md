@@ -198,11 +198,101 @@ A. Yes, it is useful for Modal page.
 Q. Has it some of useful component?
 A. Yes, it is useful for repeatly list item case.
 
----
-
 ### 08. Menu
 
+- 전역객체인 window에 DOMContentLoaded(브라우저가 HTML을 전부 읽고 DOM 트리를 완성하는 즉시 발생합니다. 이미지 파일이나 스타일시트 등의 기타 자원은 기다리지 않음)이벤트를 적용하여 문서가 모두 load 되었을 때 displayBtns, displayMenuItems 함수가 동작하도록 하였다.
+- displayMenuItems()
+  : 데이터(여기서는 json 파일로 데이터를 분리시키지 않고 app.js 파일에 넣어져 있다)가 저장된 배열에서 각 요소들을 map메서드를 이용하여 순회를 돌며 요소 안의 프로퍼티 값들을 HTML로 변환한 뒤, sectionCenter에 innerHTML을 이용하여 넣어준다.
+
+  ```js
+  function displayMenuItems(menuItems) {
+    let displayMenu = menuItems
+      .map((item) => {
+        return `
+          <article class="menu-item">
+            <img src="${item.img}" alt="menu item" class="photo" />
+            <div class="item-info">
+              <header>
+                <h4>${item.title}</h4>
+                <h4 class="price">$${item.price}</h4>
+              </header>
+              <p class="item-text">
+                ${item.desc}
+              </p>
+            </div>
+          </article>
+        `;
+      })
+      .join('');
+
+    sectionCenter.innerHTML = displayMenu;
+  }
+  ```
+
+- index.html 파일 안에 직접적으로 버튼을 생성하는 것은 추가되는 데이터의 새로운 메뉴 카테고리에 동적으로 반응하지 못하는 한계를 가지게 된다. 따라서 주어지는 데이터에 따라 동적으로 생성되는 메뉴 버튼 기능을 구현하기 위해 displayMenuBtns 함수를 생성한다.
+
+  1. 현재 데이터에 있는 카테고리를 동적으로 생성하기 위해 배열을 생성한다. values의 default를 ['all']로 설정하였음을 주목하라! 이는 우선적으로 모든 데이터 목록을 보여주기 위함이다
+
+  ```js
+  const categories = menu.reduce(
+    (values, item) => {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    },
+    ['all']
+  );
+  ```
+
+  2. categories에 저장된 데이터를 map메서드를 이용하여 html로 변환한 뒤, container에 innerHTML로 전달하여 웹 페이지에 렌더링한다.
+
+  ```js
+  const categoryBtns = categories
+    .map((category) => {
+      return `
+    <button type="button" class="filter-btn" data-id="${category}">${category}</button>
+  `;
+    })
+    .join('');
+
+  container.innerHTML = categoryBtns;
+  ```
+
+  3. 버튼들을 document에서 querySelectorAll()을 이용하여 NodeList로 잡아온 뒤, 이벤트가 발생한 버튼에 대한 메뉴 카테고리 필터링 기능을 구현한다.
+
+  ```js
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', function (e) {
+      // console.log(e.currentTarget.dataset.id);
+      const category = e.currentTarget.dataset.id;
+      const menuCategory = menu.filter(
+        (menuItem) => menuItem.category === category
+      );
+      category === 'all'
+        ? displayMenuItems(menu)
+        : displayMenuItems(menuCategory);
+    });
+  });
+  ```
+
+\[ Summary \]
+
+- 선언된 Node 변수에 innerHTML을 이용하여 여러 요소를 한꺼번에 넣어주고자 하는 경우, 데이터에 map()메서드를 이용하여 html로 반환하는 방법에 대해 숙지하여야 한다. 또한 join('') 메서드를 추가하여야 함을 잊지 말자.
+- NodeList에는 map 메서드를 사용할 수 없음에 유의하라! 만일 사용하고 싶다면 `Array.prototype.map.call(this)`를 이용하는 방법을 사용해야한다.
+
+- 굳이 배열을 새로이 생성하여 값을 하나씩 생성할 필요가 없이 reduce 메서드를 이용하여 간편하게 기존 데이터 배열에서 원하는 데이터만 배열로 추출할 수 있다
+
+\[ Check Point \]
+
+Q. Has it some of useful component?
+A. Yes, it is useful.
+
 ### 09. Video
+
+---
 
 ### 10. Scroll
 
