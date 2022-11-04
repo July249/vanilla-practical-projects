@@ -82,31 +82,70 @@ const menu = [
 ];
 /* id, title, category, price, img, desc */
 
-// const container = document.querySelector('.btn-container');
+const container = document.querySelector('.btn-container');
 const sectionCenter = document.querySelector('.section-center');
-const filterBtns = document.querySelectorAll('.filter-btn');
 
 // load items
 window.addEventListener('DOMContentLoaded', () => {
+  displayMenuBtns();
   displayMenuItems(menu);
 });
 
-filterBtns.forEach((btn) => {
-  btn.addEventListener('click', function (e) {
-    // console.log(e.currentTarget.dataset.id);
-    const category = e.currentTarget.dataset.id;
-    const menuCategory = menu.filter(
-      (menuItem) => menuItem.category === category
-    );
-    category === 'all'
-      ? displayMenuItems(menu)
-      : displayMenuItems(menuCategory);
+function displayMenuBtns() {
+  const categories = menu.reduce(
+    (values, item) => {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    },
+    ['all']
+  );
+
+  /* Create menu buttons */
+  const categoryBtns = categories
+    .map((category) => {
+      return `
+      <button type="button" class="filter-btn" data-id="${category}">${category}</button>
+    `;
+    })
+    .join('');
+
+  container.innerHTML = categoryBtns;
+
+  /* button filter action */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', function (e) {
+      // console.log(e.currentTarget.dataset.id);
+      const category = e.currentTarget.dataset.id;
+      const menuCategory = menu.filter(
+        (menuItem) => menuItem.category === category
+      );
+      category === 'all'
+        ? displayMenuItems(menu)
+        : displayMenuItems(menuCategory);
+    });
   });
-});
+}
+
+// filterBtns.forEach((btn) => {
+//   btn.addEventListener('click', function (e) {
+//     // console.log(e.currentTarget.dataset.id);
+//     const category = e.currentTarget.dataset.id;
+//     const menuCategory = menu.filter(
+//       (menuItem) => menuItem.category === category
+//     );
+//     category === 'all'
+//       ? displayMenuItems(menu)
+//       : displayMenuItems(menuCategory);
+//   });
+// });
 
 function displayMenuItems(menuItems) {
-  let displayMenu = menuItems.map((item) => {
-    return `
+  let displayMenu = menuItems
+    .map((item) => {
+      return `
       <article class="menu-item">
       <img src="${item.img}" alt="menu item" class="photo" />
       <div class="item-info">
@@ -120,9 +159,8 @@ function displayMenuItems(menuItems) {
       </div>
     </article>
     `;
-  });
-
-  displayMenu = displayMenu.join('');
+    })
+    .join('');
 
   sectionCenter.innerHTML = displayMenu;
 }
