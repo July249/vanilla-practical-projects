@@ -180,6 +180,15 @@ main {
 Video
 ===============
 */
+
+body {
+  /* prevent Drag Style */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .preloader {
   position: fixed;
   top: 0;
@@ -255,8 +264,8 @@ h1 {
   left: 50%;
 }
 /* header after */
-/* header::after {
-  content: "";
+header::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -264,4 +273,4 @@ h1 {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: -1;
-} */
+}
