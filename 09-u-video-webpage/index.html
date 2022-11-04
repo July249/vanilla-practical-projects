@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/a6bc574287.js" crossorigin="anonymous"></script>
+  <title>Video Hompage</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 62.5%;
+    }
+
+    body {
+      color: #fff;
+    }
+
+    header {
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5rem;
+      width: 95%;
+      z-index: 1000;
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0 2.4rem;
+      font-size: 2rem;
+      line-height: 1;
+      transition: .5s;
+    }
+
+    li:hover {
+      transition: .5s;
+      transform: translateY(-10px);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 700;
+    }
+
+    a:hover {
+      color: rgb(206, 206, 206);
+
+    }
+
+    .upper {
+      text-transform: uppercase;
+    }
+
+    .wrap {
+      background: linear-gradient(to left, rgb(113, 113, 255), rgb(138, 255, 146));
+      /* 동영상, 이미지에 다른 색상을 주고 싶은 경우 overlay를 사용 */
+      mix-blend-mode: overlay;
+      z-index: -2;
+    }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: 140em;
+      height: calc(100vh - 7.2rem);
+      margin: 0 4rem;
+    }
+
+    h2 {
+      font-size: 6rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    strong {
+      font-size: 4rem;
+    }
+
+    P {
+      font-size: 2rem;
+    }
+
+    button {
+      display: inline-block;
+      padding: 1rem 3.2rem;
+      font-size: 2rem;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="wrap">
+    <video muted autoplay loop class="video-container">
+      <source src="./game.mp4" type="video/mp4" />
+    </video>
+  </article>
+  <header>
+    <h1 class="logo">
+      <i class="fas fa-gamepad"></i>
+      Game
+    </h1>
+    <nav class="menu">
+      <ul>
+        <li><a class="upper" href="#">Home</a></li>
+        <li><a class="upper" href="#">Product</a></li>
+        <li><a class="upper" href="#">Recommend</a></li>
+        <li><a class="upper" href="#">Q &amp; A</a></li>
+        <li><a class="upper" href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="info">
+    <h2 class="upper">welcome my web site</h2>
+    <strong class="upper">more fun, more interested</strong>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam deleniti facere, quae saepe consequatur
+      exercitatione provident! Rem numquam sunt vero, itaccusa ratione exercitationem?
+    </p>
+    <button type="button" class="upper">join</button>
+  </section>
+  <section class="sns">
+  </section>
+
+</body>
+
+</html>
