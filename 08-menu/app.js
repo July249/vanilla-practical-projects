@@ -71,6 +71,14 @@ const menu = [
     img: './images/item-9.jpeg',
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 10,
+    title: 'juicy stake with fine wine',
+    category: 'dinner',
+    price: 35.6,
+    img: './images/item-10.jpeg',
+    desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet modi suscipit mollitia corrupti deleniti.`,
+  },
 ];
 /* id, title, category, price, img, desc */
 
